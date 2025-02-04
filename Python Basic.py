@@ -65,6 +65,17 @@ print("Total number of characters: ", z)
 print("///////////////////////////////////////////")
 
 
+Note: 04-02-2025 (dd-mm-yyyy)
+
+list1 = ["apple", "banana", "melon", "papaya"]
+print("#Accessed list item is: ", list1[2])
+list1[2] = "Coconut"
+print("Updated list item is: ", list1[2])
+print("# List items are: ", )
+for x in list1:
+    print(x)
+
+
 
 
 
