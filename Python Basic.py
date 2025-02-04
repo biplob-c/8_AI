@@ -76,6 +76,10 @@ for x in list1:
     print(x)
 
 
+/////////////////////
+List will be discussed...on next class
+
+
 
 
 
