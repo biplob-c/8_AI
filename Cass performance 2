@@ -1,0 +1,82 @@
+#1 Write a program to add and remove an item in a tuple
+#ADD
+tuple1 = (1, 2, 3, 4, 5)
+list1 = list(tuple1)
+list1.append(15)
+tuple1 = tuple(list1)
+print(tuple1)
+
+#Remove
+list1 = list(tuple1)
+list1.remove(2)
+tuple1 = tuple(list1)
+print(tuple1)
+
+#2 Write a program in python to print all Even and Odd elements of the given two list into a new separate list
+list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+list2 =[]
+list3 =[]
+for i in list1:
+    if i % 2 == 0:
+        list2.append(i)
+    else:
+        list3.append(i)
+
+print("2. Even list is: ", list2)
+print("2. Odd list is: ", list3)
+
+#3 Swapping list elements
+list1 = [1, 2, 3, 4, 5]
+list1[0], list1[4] = list1[4], list1[0]
+print("3. Swapped 1st and Last: ", list1)
+
+#4 Reverse using Negative Slicing
+list1 = [1, 2, 3, 4, 5]
+print("4. Main list: ", list1)
+list1 = list1[::-1]
+print("4. Reversed List is: ", list1)
+
+#5 Finding max number from a list
+list1 = [1, 2, 3, 4, 5]
+largest = max(list1)
+print("5. Largest element is: ", largest)
+
+#6 Converting to lower case letter
+str1 = "BangLadesh"
+capi = str1.lower()
+print("6. Capitalized: ", capi)
+
+#7 Write a program to make 2 string s1 and s2 then create a new string by appending s2 in the middle of s1
+s1 = "Biplob"
+s2 = "Chakma"
+def append_middle(s1, s2):
+    mid = int(len(s1) / 2)
+    # print(mid)
+    x = s1[:mid:]
+    print(x)
+
+    x = x + s2
+    print(x)
+    x = x + s1[mid:]
+    print("7. After appending: ", x)
+
+def main():
+    print("7. Orginal strings are: ", s1, s2)
+    append_middle(s1, s2)
+main()
+
+#8 Write a string to make of odd length greater than 7 and make a new string made of the middle 3 characters of the given string
+
+#9 Swapping list elements
+# Write a program to make a new list from a given list by exchanging  the First and last elements of the list
+list1 = [1, 2, 3, 4, 5]
+list1[0], list1[4] = list1[4], list1[0]
+print("9. Swapped 1st and Last: ", list1)
+
+#10 Write a program to get a tuple made of the first 2 and last 2 elements of a given tuple
+tuple1 = (1, 2, 3, 4, 5, 6, 7)
+tuple2 = tuple1[0:2]
+tuple3 = tuple1[-2:]
+tuple4 = tuple2 + tuple3
+print("10. Original Tuple: ", tuple1)
+print("10. First 2 and last 2 elements: ", tuple4)
