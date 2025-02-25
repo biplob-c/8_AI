@@ -1,55 +1,30 @@
 
-from tkinter import *
+from tkinter import * #Library modules to create the GUI.
 import tkinter as tk
 
-# globally declare the expression variable
+# A global variable "expression" is declared to store the current input expression.
 expression = ""
 
-# Function to update expression
-# in the text entry box
-def press(num):
-    # point out the global expression variable
+def press(num): # Function to update expression in the text entry box
     global expression
-
-    # concatenation of string
-    expression = expression + str(num)
-
-    # update the expression by using set method
-    equation.set(expression)
+    expression = expression + str(num) #concatenating the new input (num) to the existing expression.
+    equation.set(expression)           #updates the text entry box to display the current expression
 
 
-# Function to evaluate the final expression
+# This function evaluates the expression when the '=' button is pressed.
 def equalpress():
-    # Try and except statement is used
-    # for handling the errors like zero
-    # division error etc.
-
-    # Put that code inside the try block
-    # which may generate the error
     try:
         global expression
-
-        # eval function evaluate the expression
-        # and str function convert the result
-        # into string
-        total = str(eval(expression))
-
+        total = str(eval(expression))  #'eval' function evaluate the expression and 'str' function convert the result into string
         equation.set(total)
+        expression = ""            #initialize the expression variable by empty string
 
-        # initialize the expression variable
-        # by empty string
-        expression = ""
+    except:                        #if error is generate then handle by the except block
+        equation.set(" error ")    #If an error occurs (e.g., division by zero), it displays " error " in the text entry box.
+        expression = ""            #After evaluation, the expression is reset to an empty string
 
-        # if error is generate then handle
-    # by the except block
-    except:
-        equation.set(" error ")
-        expression = ""
-
-    # Function to clear the contents
-
-# of text entry box
-def clear():
+    
+def clear():                       #Function to clear the contents of text entry box
     global expression
     expression = ""
     equation.set("")
@@ -57,27 +32,14 @@ def clear():
 
 # Driver code
 if __name__ == "__main__":
-    # create a GUI window
-    gui = Tk()
+    gui = Tk()                           #'Tk()' object is created to initialize the main GUI window.
+    gui.configure(background="#bfbfbf")  # set the background colour of GUI window
+    gui.title("Basic Calculator")        # set the title of GUI window
+    gui.geometry("260x270")              # set the configuration of GUI window
 
-    # set the background colour of GUI window
-    gui.configure(background="#bfbfbf")
-
-    # set the title of GUI window
-    gui.title("Basic Calculator")
-
-    # set the configuration of GUI window
-    gui.geometry("260x270")
-
-    # StringVar() is the variable class
-    # we create an instance of this class
-    equation = StringVar()
-
-    # create the text entry box for showing the expression .
-    expression_field = Entry(gui, textvariable=equation)
-
-    # grid method is used for placing
-    expression_field.grid(columnspan=8, ipadx=70, ipady=20, sticky="ew")
+    equation = StringVar()               # StringVar() is the variable class, we create an instance of this class
+    expression_field = Entry(gui, textvariable=equation)  # create the text entry box for showing the expression .
+    expression_field.grid(columnspan=8, ipadx=70, ipady=20, sticky="ew") #grid method is used for placing
 
     # /////////Row: 1  /////////
     button7 = Button(gui, text='7', fg='white', bg='#77773c', command=lambda: press(7), height=2, width=7)
@@ -122,5 +84,7 @@ if __name__ == "__main__":
     Decimal.grid(row=5, column=1)
     clear = Button(gui, text='Clear', fg='black', bg='#cccccc', command=clear, height=2, width=7)
     clear.grid(row=5, column=2)
-    # start the GUI
-    gui.mainloop()
+    
+   
+    gui.mainloop()  #Starts the GUI event loop
+    
