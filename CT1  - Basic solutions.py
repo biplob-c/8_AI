@@ -1,6 +1,11 @@
 #1 Write a program to get a string made of the first 2 and last 2 characters of a given string. If the string length is less than 2, return empty string.
 #example: Input: exercise, Output: exse
+x = input("Enter a string: ")
+a = (x[0:2])
+b = (x[-2:])
+print(a+b)
 
+.............
 x = 'exercise'
 a = (x[0:2])
 b = (x[6:])
@@ -22,18 +27,17 @@ print('Modified string is: ', result)
 .................................
 #3 Write a program to add "ing" at the end of the string. If the string already ends with 'ing' then add 'ly' at the end. If the string length of the given string is less than 3 then do not change it.
 #Example: Input1: string, Output: stringly, Input2: strong, Output2: stronging
-
 x = input("Enter a string: ")
-#print(x)
 
-if len(x) > 3:
-    if x[-3:]=="ing":
-        x+="ly"
+if len(x)>=3:
+    if x[-3:]=='ing':
+        x = x+'ly'
     else:
-        x+="ing"
+        x = x+'ing'
     print(x)
 else:
     print(x)
+    
 .................................
 #4 Write a program to make a new string from the given string by exchanging the first and last characters.
 #Example: Input: bangla, Output: aanglb
@@ -48,19 +52,15 @@ print(result)
 .................................
 #5 Write a program to amke a string of odd length greater than 7 and then make a new string made of the middle 3 characters of the given string.
 def get_middle(x):
-    s_length = len(x)+1
-    
-    mid = str(s_length/2)
-    mid_char = x.find(mid)
-    mid_char2 = x[mid_char]
-    return mid_char2
+    s_length = len(x)
 
-def main():
-    print("Enter a string: ")
-    x = input()
-    print("The Three middle characters are: ", get_middle(x))
+    mid = s_length//2 #integer division(//) to find the middle index
+    print(mid)
+    return x[mid-1:mid+2]
 
-main()
+x = input('Enter a string Odd length of greater than 7: ')
+result = get_middle(x)
+print("Three middle characters are: ", result)
 
 #print("Length of the string is: ", len(x))
 .................................
