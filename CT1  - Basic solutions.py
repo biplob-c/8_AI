@@ -11,14 +11,14 @@ print(len(slicing))
 #2 Write a program to get a string where all the characters have been changed to '@', except the first character
 #Example: Input: string, Output: s@@@@
 
-x = "Dhaka"
+def replaced_except_first(x, replace_char='*'):
+    first_char = x[0]
+    replace_part = replace_char*(len(x)-1)
+    return first_char + replace_part
 
-for i in "Dhaka":
-    print(x)
-    
-print("\n")
-
-print(x.replace("haka", "@@@@"))
+x = input("Enter a string: ")
+result = replaced_except_first(x)
+print('Modified string is: ', result)
 .................................
 #3 Write a program to add "ing" at the end of the string. If the string already ends with 'ing' then add 'ly' at the end. If the string length of the given string is less than 3 then do not change it.
 #Example: Input1: string, Output: stringly, Input2: strong, Output2: stronging
