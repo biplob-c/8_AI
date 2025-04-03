@@ -117,18 +117,18 @@ print("Enter a string: ")
 x = input()
 
 a = {'0', '1'}  # set
-t = set(x)
+x = set(x)
 
-if t == a or t == {'0'} or t == {'1'}:
+if x == a or x == {'0'} or tx== {'1'}:
     print("Yes")
 else:
     print("No")
 .................................
-# Write a program to convert a givven string into a lower case string
 
-print("Enter a string with Uppler Case letter: ")
-x = input()
-print("Output: ", x.lower())
+# Write a program to convert a givven string into a lower case string
+x = input('Enter a string in Capital: ')
+x = x.lower()
+print('Output: ', x)
 .................................
 
 .................................
